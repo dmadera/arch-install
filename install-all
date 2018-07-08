@@ -15,3 +15,4 @@ $DIR/install-fonts
 $DIR/install-user
 
 su dmadera -P -c "$DIR/install-aurman"
+su dmadera -P -c "$DIR/install-user-settings"

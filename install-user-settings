@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git config --global user.name "Daniel Maděra"
+git config --global user.email "madera.dan@gmail.com"
+git config --global core.editor vim
