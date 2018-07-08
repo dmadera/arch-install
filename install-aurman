@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+if [ ! "$EUID" -ne 0 ]
+  then echo "Please DO NOT run as root"
+  exit
+fi
+
+gpg --recv-keys 465022E743D71E39
+git clone https://aur.archlinux.org/aurman.git
+cd aurman
+makepkg -si
+cd ..
+rm aurman -rf
+exit

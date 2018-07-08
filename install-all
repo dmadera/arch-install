@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+then echo "Please run as root"
+  exit
+fi
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+$DIR/install-grub
+$DIR/install-localization
+$DIR/install-network themachine localdomain
+$DIR/install-packages
+$DIR/install-fonts
+$DIR/install-user
+
+su dmadera -P -c "$DIR/install-aurman"

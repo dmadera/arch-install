@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# usage: install-network.sh hostname domain [ip]
+
+# variables
+hostname=i$1
+domain=$2
+ip=${3:-"127.0.1.1"}
+
+# network settings
+cat > /etc/hosts <<EOF
+127.0.0.1   localhost
+::1         localhost
+$ip         $hostname.$domain $hostname
+EOF
+echo $hostname > /etc/hostname
+pacman -S --noconfirm --needed networkmanager
+systemctl enable NetworkManager
+systemctl start NetworkManager
+
+

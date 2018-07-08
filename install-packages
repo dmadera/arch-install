@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# pacman packages
+pacman -S --noconfirm --needed xf86-video-intel xf86-video-amdgpu
+pacman -S --noconfirm --needed xorg xorg-xinit xorg-xbacklight
+pacman -S --noconfirm --needed i3 i3status feh
+pacman -S --noconfirm --needed sudo git python3 ntfs-3g pulseaudio
+pacman -S --noconfirm --needed tee tree bash-completion
+pacman -S --noconfirm --needed parted chromium inkscape gimp
+pacman -S --noconfirm --needed base-devel file

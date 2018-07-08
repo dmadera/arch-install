@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# create user
+id -u dmadera &>/dev/nul || useradd --create-home -G users dmadera
+value="dmadera ALL=(ALL:ALL) ALL"
+grep -q -F "$value" /etc/sudoers || echo "$value" | sudo EDITOR='tee -a' visudo
+
