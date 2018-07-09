@@ -1,2 +1,2 @@
-# arch-install-scripts
+# arch-install
 Installing scripts for archlinux
