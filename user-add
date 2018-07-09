@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/root-check
+
+user=$1
+
+# create user
+id -u $user &>/dev/nul || useradd --create-home -G users $user
+value="$user ALL=(ALL:ALL) ALL"
+grep -q -F "$value" /etc/sudoers || echo "$value" | sudo EDITOR='tee -a' visudo

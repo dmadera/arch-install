@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# usage: install-network.sh hostname domain [ip]
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/root-check
+
+pacman -S --noconfirm --needed cups
+systemctl enable cups-browsed.service
+systemctl start cups-browsed.service
+usermod -a -G sys dmadera
+

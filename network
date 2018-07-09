@@ -2,6 +2,9 @@
 #
 # usage: install-network.sh hostname domain [ip]
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/root-check
+
 # variables
 hostname=i$1
 domain=$2

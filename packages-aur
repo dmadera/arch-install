@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 if [ ! "$EUID" -ne 0 ]
   then echo "Please DO NOT run as root"
@@ -11,4 +11,6 @@ cd aurman
 makepkg -si
 cd ..
 rm aurman -rf
-exit
+
+# aurman packages
+aurman -S py3status teamviewer

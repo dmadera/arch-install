@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# aurman packages
-aurman -S py3status teamviewer

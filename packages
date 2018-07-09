@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/root-check
+
+# pacman packages
+pacman -S xf86-video-intel xf86-video-amdgpu acpi
+pacman -S xorg xorg-xinit xorg-xbacklight
+pacman -S i3 i3status feh
+pacman -S sudo ntfs-3g parted pulseaudio
+pacman -S gvim git rxvt-unicode
+pacman -S youtube-dl simple-scan
+pacman -S tee tree bash-completion xclip
+pacman -S tar unrar unzip p7zip zip
+pacman -S chromium inkscape gimp ffmpeg
+pacman -S base-devel file python3i
+pacman -S openssh
