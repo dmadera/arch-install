@@ -5,8 +5,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/root-check
 
-pacman -S --noconfirm --needed cups
+pacman -S system-config-printer-gnome
+pacman -S cups ghostscript gsfonts
+pacman -S gutenprint hplip splix cups-pdf
+pacman -S foomatic-db foomatic-db-engine foomatic-db-nonfree
+systemctl enable org.cups.cupsd.service
+systemctl start org.cups.cupsd.service
 systemctl enable cups-browsed.service
 systemctl start cups-browsed.service
 usermod -a -G sys dmadera
+groupadd lpadmin
+usermod -aG lpadmin dmadera
+
+echo 'Add "SystemGroup sys root lpadmin" to /etc/cups/cupsd.conf.'
+echo 'Restart cups: systemctl restart org.cups.cupsd.service"
 
