@@ -13,4 +13,6 @@ cd ..
 rm aurman -rf
 
 # aurman packages
-aurman -S py3status teamviewer
+aurman -S py3status
+aurman -S pmount
+aurman -S teamviewer
