@@ -17,8 +17,8 @@ cat > /etc/hosts <<EOF
 $ip         $hostname.$domain $hostname
 EOF
 echo $hostname > /etc/hostname
-pacman -S --noconfirm --needed networkmanager
-systemctl enable NetworkManager
-systemctl start NetworkManager
+pacman -S networkmanager dnsmasq
+systemctl -now enable NetworkManager.service
+systemctl -now enable dnsmasq.service
 
 
