@@ -3,6 +3,10 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/root-check
 
+echo  "Edit /etc/pacman.conf and uncoment section multilib"
+read -n 1 -s -r -p "Press any key to continue"
+pacman -Syu
+
 # pacman packages
 pacman -S xf86-video-intel xf86-video-amdgpu acpi
 pacman -S xorg xorg-xinit xorg-xbacklight
